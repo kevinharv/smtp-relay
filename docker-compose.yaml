@@ -1,0 +1,15 @@
+---
+services:
+  server:
+    image: kevharv/smtp-relay
+    build: .
+    container_name: smtp-relay
+    env_file: .env
+    ports:
+      - 8080:8080
+    # healthcheck:
+    #   test: ["CMD", "curl", "--fail", "http://localhost:8080/healthz", "||", "exit", "1"]
+    #   interval: 30s
+    #   timeout: 5s
+    #   retries: 5
+    #   start_period: 10s
